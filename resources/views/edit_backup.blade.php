@@ -25,13 +25,8 @@
                             </div>
                             <div class="">
                                 <label><strong>Select Category :</strong></label><br/>
-                                <select class="form-control selectpicker" multiple name="cat[]">
-                                    @foreach($dt->cat as $category)
-                                    <option {{$category == 'php' ? 'selected': ''}} >PHP</option>
-                                    <option {{$category == 'react' ? 'selected': ''}} >React</option>
-                                    <option {{$category == 'jquery' ? 'selected': ''}} >JQuery</option>
-                                    <option {{$category == 'javascript' ? 'selected': ''}} >Javascript</option>
-                                    @endforeach
+                                <select class="form-control" name="cat[]" multiple="">
+                                    <option {{(old('cat')) == "php" || in_array("php", $posts) ? 'selected' : ''}}  value="php">PHP</option>
                                 </select>
                             </div>
 

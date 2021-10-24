@@ -32,7 +32,8 @@ class PostController extends Controller
     public function edit($id)
     {
         $dt = Post::find($id);
-        return view('edit',compact('dt'));
+        $posts = Post::pluck('cat')->toArray();
+        return view('edit',compact('dt','posts'));
     }
 
     public function postUpdate(Request $request,$id)
